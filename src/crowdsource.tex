@@ -1,0 +1,17 @@
+\section{Crowdsourcing annotations}
+
+Image annotation interfaces are often used in the context
+of large datasets of images to annotate.
+As such, tasks management for crowdsourcing campaigns is an important feature. 
+Labelbox and Dataturks are all-in-one services providing
+tasks management directly in their applications.
+Just like LabelMe, we choose instead to provide a configuration,
+ready to use with Amazon Mechanical Turk (Mturk).
+
+Mturk comes in two sides. A ``requester'' is defining a set of tasks
+while a ``worker'' is performing them.
+Workers are payed by requesters through Mturk service.
+The concept of a ``HIT'' (Human Intelligence Task) characterizes the task unit.
+In our case, one HIT means one image to be annotated.
+We describe in details how to setup a campaign with our template
+in the application documentation.
