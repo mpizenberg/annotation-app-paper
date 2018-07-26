@@ -5,7 +5,7 @@ including image classification (which requires textual labels),
 object detection (bounding boxes), or image segmentation (pixel-wise classification).
 The rise and successes of deep learning lead to an increasing need for annotations,
 as training sets should be of a large size for these algorithms to be efficient.
-Yet, in many cases, researchers spend time and resources
+Yet, researchers still spend time and resources
 to create ad hoc tools to prepare those datasets.
 The application we present in this paper aims at providing a customizable tool
 to fulfill most image annotation needs.
@@ -16,7 +16,7 @@ to fulfill most image annotation needs.
 %     \centering
 %     \begin{subfigure}[b]{0.575\textwidth}
 %         \includegraphics[width=\textwidth]{img/labelme.jpg}
-%         \caption{Labelme}
+%         \caption{LabelMe}
 %     \end{subfigure}
 %     \hfill
 %     \begin{subfigure}[b]{0.405\textwidth}
@@ -36,27 +36,27 @@ to fulfill most image annotation needs.
 %     \caption{Interfaces of main other Web annotation applications}\label{fig:interfaces}
 % \end{figure*}
 
-Many applications exist for image annotation (Table~\ref{tab:web-apps}).
-One of the most popular is LabelMe~\cite{russell2008labelme}.
-LabelMe provides an interface for drawing bounding boxes and polygons
-around objects in an image,
-and has been used extensively to create datasets for image segmentation.
-Some more recent softwares share the same goals, with various particular features.
+Many image annotation applications already exist (Table~\ref{tab:web-apps}).
+LabelMe~\cite{russell2008labelme}, one of the most popular,
+provides an interface for drawing bounding boxes and polygons
+around objects in an image.
+It has been used extensively to create datasets for image segmentation.
+Some more recent softwares share the same goals, with their own specificities.
 For example, Labelbox~\cite{labelbox} and
-Dataturks~\cite{dataturks} provide tools for annotation tasks management,
+Dataturks~\cite{dataturks} provide annotation tasks management,
 particularly useful when crowdsourcing the annotations;
 these softwares are proprietary.
 The VGG Image Annotator (VIA~\cite{dutta2016via})
-is an open source client application like ours,
-with the particularity of providing annotation attributes,
+is an open-source client application like ours,
+with the specificity of providing annotation attributes,
 editable in a spreadsheet format.
 
 We release an open-source application~\cite{annotationappgithub},
-purely client side, meaning that no data is uploaded to any server.
+entirely client side, meaning that no data is uploaded to any server.
 Images are loaded from files and annotated locally, in the browser.
 The simplest tool, from a user perspective, should be immediately available
 i.e.\ should not require any additional installation to be fully functional.
-Our image annotation tool is thus a Web-based application,
+Our image annotation software is thus a Web-based application,
 easily configurable to fit users needs, as well as
 embeddable in the Mechanical Turk platform to design crowdsourcing campaigns.
 
