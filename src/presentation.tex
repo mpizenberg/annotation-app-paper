@@ -1,14 +1,14 @@
 \section{Presentation of the application}
 
-A screenshot of the application can be seen on Figure~\ref{fig:teaser}.
+A screenshot of the application can be seen in Figure~\ref{fig:teaser}.
 The image to be annotated occupies the central part of the screen;
-a tool bar is located on top, object classes are available on the left
+a toolbar is located on top, object classes are available on the left
 and images to be annotated on the right.
 
 
 \textbf{Images}.
 Multiple images can be loaded at the same time using the image icon
-on the top-right part of the application.
+on the top-right corner of the application.
 These images are not uploaded on the server,
 and can either be loaded locally from the client's machine,
 or from a distant server.
@@ -24,38 +24,25 @@ or from a distant server.
 Our application includes several tools to annotate images.
 Icons for these tools are depicted in Figure~\ref{fig:icons}.
 From left to right, the first available annotation is the point,
-that can be useful to designate objects on the image.
+that can be useful to designate objects in the image.
 It can also be used as a seed in region-growing image segmentation methods.
 The second annotation we included is the bounding box,
 which provides the localization of objects in the image,
 and is used in object detection problems.
-The bounding box information we acquire are the coordinates of the top-left point,
-as well as width and height of the rectangle.
-% * <matthieu.pizenberg@gmail.com> 2018-05-20T07:01:04.507Z:
-% 
-% > The bounding box information we acquire are the coordinates of the top-left point,
-% > as well as width and height of the rectangle
-% A l'export, c'est plutot au format xmin, xmax, ymin, ymax il me semble
-% 
-% ^.
+The information we acquire are the left, right, top and bottom coordinates
+of the bounding box.
 The third annotation we chose to implement is the stroke,
 or scribble, which is a popular interaction in image segmentation.
 It consists in a sequence of points, interpreted as a continuous line.
-Outlines, the fourth type of annotations,
-are closed shapes to be typically drawn around objects.
-It is comparable to bounding boxes in essence,
-but provides a more precise localization of objects.
+The outline, fourth type of annotation,
+is a closed shape, typically drawn around objects.
+It is comparable to a bounding box in essence,
+but provides a more precise location of objects.
 Finally, polygons can also be drawn (as in LabelMe, for instance),
 by successively clicking new points as vertices.
 
 
-All these tools can be used both with a mouse or on a touch device.
-% * <matthieu.pizenberg@gmail.com> 2018-05-20T07:05:36.533Z:
-% 
-% > or on a touch device
-% Avec la limitation que pour l'instant, on a pas adapté l'aspect "responsive" de l'ancienne demo, pour être completement utilisable avec des devices plus petits comme les tablettes.
-% 
-% ^.
+All these tools are available both with a mouse or a touch interaction.
 As a matter of fact, some tools are better suited to touch devices
 (for example, outlines) than others (polygons).
 
@@ -71,7 +58,7 @@ As a matter of fact, some tools are better suited to touch devices
 For most annotation tasks, we also need to differentiate objects in the images.
 Typically each annotated area is attributed a class, or label.
 The PASCAL VOC dataset~\cite{everingham2010pascal}, for example,
-is composed of 20 classes, grouped by categories. Those classes are:
+is composed of 20 classes, grouped by categories:
 \begin{itemize}
 \item \textit{Person}: person
 \item \textit{Animal}: bird, cat, cow, dog, horse, sheep
@@ -81,7 +68,7 @@ is composed of 20 classes, grouped by categories. Those classes are:
 
 In our application, classes are specified in a JSON configuration file.
 A strict corresponding config for PASCAL VOC classes
-would be as the (Listing~\ref{lst:pascal}).
+is presented in Listing~\ref{lst:pascal}.
 
 \lstinputlisting[language=json,caption={A configuration file to annotate the PASCAL dataset.},float,label={lst:pascal}]{code/config-pascal.json}
 
@@ -93,20 +80,19 @@ corresponding to this class.
 
 
 \textbf{Configuration file}.
-The five annotation tools can be made available or not
-using the configuration file as well.
+The five annotation tools are optionally made available by the configuration file.
 In Listing~\ref{lst:pascal}, the last line of the depicted configuration file
-contains an \texttt{annotation} field, that can be used to show any of the tools.
-In that case, all tools are present.
+contains an \texttt{annotations} field, listing the tools that should be available.
+In this case, they all are.
 
-In addition to the five fundamental annotation types available,
+In addition to the five fundamental annotation types,
 each type can be derived in virtually any number of variations.
 For example, interactive segmentation algorithms often require
 \textit{foreground} and \textit{background} scribbles.
 In our application, this would mean the user would need to draw two types of strokes.
 This can be achieved using the configuration file,
-as in listing~\ref{lst:variations}.
-Such configuration would result in two stroke icons in the tool bar,
+as in Listing~\ref{lst:variations}.
+Such configuration would result in two stroke icons in the toolbar,
 of different colors, just as in Figure~\ref{fig:teaser}.
 
 \lstinputlisting[language=json,caption={A configuration file to include two types of strokes.},float,label={lst:variations}]{code/config-variations.json}
