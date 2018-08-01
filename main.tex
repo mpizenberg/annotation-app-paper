@@ -1,4 +1,4 @@
-\documentclass[sigconf, review=false, anonymous=false, authorversion=false, timestamp=true, authordraft=false]{acmart}
+\documentclass[sigconf, review=false, anonymous=false, authorversion=false, timestamp=false, authordraft=false]{acmart}
 
 \usepackage{booktabs} % For formal tables
 \usepackage{makecell} % Line break in cell
@@ -8,21 +8,28 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
+% listings code formatting configuration
 \input{src/code-config.tex}
 
 % DOI and ISBN
-\acmDOI{10.475/123_4}
-\acmISBN{123-4567-24-567/08/06} % chktex 8
+\acmDOI{10.1145/3240508.3243656}
+\acmISBN{978-1-4503-5665-7/18/10} % chktex 8
 
 % Conference
-\acmConference[MM'18]{}{October 22--26, 2018}{Seoul, Korea}
+\acmYear{2018}
+\acmConference[MM '18]{2018 ACM Multimedia Conference}{October 22--26, 2018}{Seoul, Republic of Korea}
+\acmBooktitle{2018 ACM Multimedia Conference (MM '18), October 22--26, 2018, Seoul, Republic of Korea}
+\acmPrice{15.00}
 
 % Copyright
 \setcopyright{acmlicensed}
 \copyrightyear{2018}
 
-% Remove non-mandatory "ACM Reference format" and CCS
-\settopmatter{printacmref=false, printccs=true, printfolios=false, authorsperrow=4}
+% "ACM Reference format" and CCS
+\settopmatter{printacmref=true, printccs=true, printfolios=false, authorsperrow=4}
+
+% Remove headers for camera ready submission
+\fancyhead{}
 
 
 \begin{document}
